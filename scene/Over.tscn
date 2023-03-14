@@ -1,0 +1,68 @@
+[gd_scene load_steps=8 format=3 uid="uid://dptgsbogsa8ps"]
+
+[ext_resource type="PackedScene" uid="uid://d4gvk0r8mdya4" path="res://scene/Background.tscn" id="1_akpgx"]
+[ext_resource type="Texture2D" uid="uid://cnqkcorfa5wcv" path="res://image/score_panel.png" id="2_1bxlb"]
+[ext_resource type="Texture2D" uid="uid://dhw1vf2nwjgm4" path="res://image/text_game_over.png" id="3_yad6h"]
+[ext_resource type="Texture2D" uid="uid://c72o6oyloxskr" path="res://image/button_menu.png" id="4_70o63"]
+[ext_resource type="Texture2D" uid="uid://d04bsbomdmoee" path="res://image/button_share.png" id="5_v07ao"]
+[ext_resource type="FontFile" uid="uid://hxal1hauaske" path="res://Font/FB.ttf" id="6_kuhi0"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mx2il"]
+font = ExtResource("6_kuhi0")
+font_size = 36
+
+[node name="Over" type="Node2D"]
+
+[node name="Background" parent="." instance=ExtResource("1_akpgx")]
+position = Vector2(2.08165e-12, 2.08165e-12)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ScorePanel" type="Sprite2D" parent="Control"]
+position = Vector2(577.222, 201)
+scale = Vector2(1.8254, 1.8254)
+texture = ExtResource("2_1bxlb")
+
+[node name="TextGameOver" type="Sprite2D" parent="Control"]
+position = Vector2(577.222, 86)
+texture = ExtResource("3_yad6h")
+
+[node name="Menu" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 475.0
+offset_top = 316.0
+offset_right = 563.0
+offset_bottom = 352.0
+icon = ExtResource("4_70o63")
+flat = true
+
+[node name="Share" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 598.0
+offset_top = 316.0
+offset_right = 686.0
+offset_bottom = 352.0
+icon = ExtResource("5_v07ao")
+flat = true
+
+[node name="Score" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 701.0
+offset_top = 151.0
+offset_right = 741.0
+offset_bottom = 191.0
+text = "0"
+label_settings = SubResource("LabelSettings_mx2il")
+
+[node name="Best" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 701.0
+offset_top = 232.0
+offset_right = 741.0
+offset_bottom = 272.0
+text = "0"
+label_settings = SubResource("LabelSettings_mx2il")

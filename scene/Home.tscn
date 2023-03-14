@@ -1,0 +1,62 @@
+[gd_scene load_steps=8 format=3 uid="uid://bf2as5vekxlmj"]
+
+[ext_resource type="PackedScene" uid="uid://d4gvk0r8mdya4" path="res://scene/Background.tscn" id="1_vf0fv"]
+[ext_resource type="Texture2D" uid="uid://jpavpbyoys0" path="res://image/title.png" id="2_srdba"]
+[ext_resource type="Texture2D" uid="uid://b5kevaaa72kyk" path="res://image/bird0_0.png" id="3_180vu"]
+[ext_resource type="Texture2D" uid="uid://br06bdkobxmbe" path="res://image/bird0_1.png" id="4_win0p"]
+[ext_resource type="Texture2D" uid="uid://b5ia2yhnxclsw" path="res://image/bird0_2.png" id="5_0ta65"]
+[ext_resource type="Texture2D" uid="uid://dfaelg7f4d7ct" path="res://image/button_play.png" id="6_q7sms"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_scgj8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_180vu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_win0p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_0ta65")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Home" type="Node2D"]
+
+[node name="Background" parent="." instance=ExtResource("1_vf0fv")]
+position = Vector2(2.08165e-12, 2.08165e-12)
+
+[node name="UI" type="Node2D" parent="."]
+
+[node name="Title" type="Sprite2D" parent="UI"]
+position = Vector2(577, 102)
+texture = ExtResource("2_srdba")
+
+[node name="Bird" type="AnimatedSprite2D" parent="UI"]
+position = Vector2(577, 186)
+sprite_frames = SubResource("SpriteFrames_scgj8")
+autoplay = "default"
+frame_progress = 0.0916039
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Start" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 12.825
+anchor_top = 5.65
+anchor_right = 15.725
+anchor_bottom = 7.4
+offset_right = 8.0
+offset_bottom = 8.0
+icon = ExtResource("6_q7sms")
+flat = true
+metadata/_edit_use_anchors_ = true
