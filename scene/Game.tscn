@@ -14,15 +14,7 @@ position = Vector2(89, 318)
 position = Vector2(2.08165e-12, 2.08165e-12)
 anchor_mode = 0
 
-[node name="Backgrounds" type="Node2D" parent="."]
-
-[node name="Background1" parent="Backgrounds" instance=ExtResource("2_05i43")]
-position = Vector2(-1152, 2.08165e-12)
-
-[node name="Background2" parent="Backgrounds" instance=ExtResource("2_05i43")]
-position = Vector2(2.08165e-12, 2.08165e-12)
-
-[node name="Background3" parent="Backgrounds" instance=ExtResource("2_05i43")]
-position = Vector2(1152, 2.08165e-12)
-
 [node name="Pipes" type="Node2D" parent="."]
+
+[node name="Background" parent="." instance=ExtResource("2_05i43")]
+position = Vector2(-1, 1)

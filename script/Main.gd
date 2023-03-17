@@ -2,15 +2,19 @@ extends Node2D
 
 @onready var transitionAnimation: AnimationPlayer = $Transition/AnimationPlayer
 
+enum SCENE { Home, Game, Over }
 var sceneMap = {
+	SCENE.Home: preload("res://scene/Home.tscn"),
+	SCENE.Game: preload("res://scene/Game.tscn"),
+	SCENE.Over: preload("res://scene/Over.tscn"),
 }
+
+var score: int = 0
+var highestScore: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	home()
-	$swoosh.play()
-	transitionAnimation.play('fade-in')
-	await transitionAnimation.animation_finished
+	changeScene(SCENE.Home)
 	
 func changeScene(scene: SCENE):
 	var scenePath = sceneMap[scene]
@@ -19,36 +23,10 @@ func changeScene(scene: SCENE):
 	else:
 		$swoosh.play()
 	transitionAnimation.play_backwards("fade-in")
-
-func home():
-	var homeResource = preload("res://scene/Home.tscn")
-	var home = homeResource.instantiate()
-	add_child(home)
-	$Home/Control/Start.connect("pressed", Callable(self, "startGame"))
-	$swoosh.play()
-	if get_node_or_null("Over") != null:
-		$Over.queue_free()
-
-func startGame():
-	var gameResource = preload("res://scene/Game.tscn")
-	var game = gameResource.instantiate()
-	add_child(game)
-	
-	game.end_game.connect(endGame)
-	
-	$Home.queue_free()
-	
-	$swoosh.play()
-	
-func endGame(point: int):
-	var overResource = preload("res://scene/Over.tscn")
-	var over = overResource.instantiate()
-	add_child(over)
-	$Over/Control/Score.text = String.num_int64(point)
-	$Over/Control/Menu.connect("pressed", Callable(self, "home"))
-	$Game.queue_free()
-	
-	$die.play()
+	await transitionAnimation.animation_finished
+	get_tree().change_scene_to_packed(scenePath)
+	transitionAnimation.play('fade-in')
+	await transitionAnimation.animation_finished
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

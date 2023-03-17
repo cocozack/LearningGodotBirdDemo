@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://bf2as5vekxlmj"]
+[gd_scene load_steps=9 format=3 uid="uid://bf2as5vekxlmj"]
 
+[ext_resource type="Script" path="res://script/Home.gd" id="1_pofbj"]
 [ext_resource type="PackedScene" uid="uid://d4gvk0r8mdya4" path="res://scene/Background.tscn" id="1_vf0fv"]
 [ext_resource type="Texture2D" uid="uid://jpavpbyoys0" path="res://image/title.png" id="2_srdba"]
 [ext_resource type="Texture2D" uid="uid://b5kevaaa72kyk" path="res://image/bird0_0.png" id="3_180vu"]
@@ -25,6 +26,7 @@ animations = [{
 }]
 
 [node name="Home" type="Node2D"]
+script = ExtResource("1_pofbj")
 
 [node name="Background" parent="." instance=ExtResource("1_vf0fv")]
 position = Vector2(2.08165e-12, 2.08165e-12)

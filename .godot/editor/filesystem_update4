@@ -1,0 +1,7 @@
+res://scene/Background.tscn
+res://scene/Game.tscn
+res://scene/Main.tscn
+res://scene/Home.tscn
+res://scene/Over.tscn
+res://scene/Pipe.tscn
+res://script/Game.gd
