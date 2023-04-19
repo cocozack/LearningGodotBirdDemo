@@ -1,0 +1,43 @@
+[gd_scene load_steps=8 format=3 uid="uid://cw7npt7ha307d"]
+
+[ext_resource type="Texture2D" uid="uid://dt038pwjr2umn" path="res://image/enemy/cloud/0.png" id="1_m8mf6"]
+[ext_resource type="Script" path="res://script/enemy/Cloud.gd" id="1_ucwrl"]
+[ext_resource type="Texture2D" uid="uid://d53uegtlt0q2" path="res://image/enemy/cloud/1.png" id="2_jum8b"]
+[ext_resource type="Texture2D" uid="uid://bf1l5jwl51rwf" path="res://image/enemy/cloud/2.png" id="3_l3o82"]
+[ext_resource type="Texture2D" uid="uid://dmae67nm8na24" path="res://image/enemy/cloud/3.png" id="4_pkpvs"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0pbt5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_m8mf6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_jum8b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_l3o82")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_pkpvs")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bwcgx"]
+size = Vector2(229, 172)
+
+[node name="Cloud" type="AnimatableBody2D"]
+script = ExtResource("1_ucwrl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_0pbt5")
+frame_progress = 0.589915
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-4.5, -2)
+shape = SubResource("RectangleShape2D_bwcgx")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]

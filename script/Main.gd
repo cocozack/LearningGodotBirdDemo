@@ -22,8 +22,9 @@ func changeScene(scene: SCENE):
 		$die.play()
 	else:
 		$swoosh.play()
-	transitionAnimation.play_backwards("fade-in")
-	await transitionAnimation.animation_finished
+	if scene != SCENE.Home:
+		transitionAnimation.play_backwards("fade-in")
+		await transitionAnimation.animation_finished
 	get_tree().change_scene_to_packed(scenePath)
 	transitionAnimation.play('fade-in')
 	await transitionAnimation.animation_finished

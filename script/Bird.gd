@@ -10,6 +10,8 @@ var screen_size
 
 @onready var animated: AnimatedSprite2D = $AnimatedSprite2D
 
+signal hpChanged(oldHealth, newHealth)
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	screen_size = get_viewport_rect().size
@@ -22,7 +24,6 @@ func _ready():
 	set_max_contacts_reported(1)
 	
 	connect("body_entered", Callable(self, "on_body_entered_event"))
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -49,4 +50,7 @@ func _process(delta):
 
 func on_body_entered_event(enter_body):
 	$hit.play()
-	hp = hp - 1
+	var oldHp = hp
+	hp = max(hp - 1, 0)
+	emit_signal('hpChanged', oldHp, hp)
+

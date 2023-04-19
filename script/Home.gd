@@ -5,7 +5,6 @@ extends Node2D
 func _ready():
 	$Control/Start.connect("pressed", Callable(self, "startGame"))
 
-
 func startGame():
 	Main.changeScene(Main.SCENE.Game)
 

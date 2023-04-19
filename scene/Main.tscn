@@ -40,7 +40,7 @@ _data = {
 "fade-in": SubResource("Animation_nsidh")
 }
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node"]
 script = ExtResource("1_jl8ud")
 
 [node name="die" type="AudioStreamPlayer" parent="."]

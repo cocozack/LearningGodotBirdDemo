@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://bp5m3115750wx"]
+
+[ext_resource type="Script" path="res://script/effect/EffectHp.gd" id="1_dei3e"]
+[ext_resource type="Texture2D" uid="uid://2poamjaq24hv" path="res://image/hp/0.png" id="1_ln3do"]
+[ext_resource type="Texture2D" uid="uid://cin03nr38m804" path="res://image/hp/1.png" id="2_mg6fu"]
+[ext_resource type="Texture2D" uid="uid://dd22diobwmwv4" path="res://image/hp/2.png" id="3_px4qf"]
+[ext_resource type="Texture2D" uid="uid://t0j4bx5od813" path="res://image/hp/3.png" id="4_6vl7u"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xf0ff"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ln3do")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_mg6fu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_px4qf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_6vl7u")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qpv4b"]
+radius = 18.4391
+
+[node name="EffectHp" type="Node2D"]
+script = ExtResource("1_dei3e")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
+position = Vector2(0.5, 0.5)
+scale = Vector2(0.409524, 0.409524)
+sprite_frames = SubResource("SpriteFrames_xf0ff")
+frame_progress = 0.404014
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_qpv4b")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(1, 1.99999)
+scale = Vector2(2.1, 2.1)

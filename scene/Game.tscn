@@ -1,8 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://ch4s6jb3bicxa"]
+[gd_scene load_steps=6 format=3 uid="uid://ch4s6jb3bicxa"]
 
 [ext_resource type="PackedScene" uid="uid://c56gjpnpocjdu" path="res://scene/Bird.tscn" id="1_1rve7"]
 [ext_resource type="Script" path="res://script/Game.gd" id="1_j74km"]
 [ext_resource type="PackedScene" uid="uid://d4gvk0r8mdya4" path="res://scene/Background.tscn" id="2_05i43"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rrpo8"]
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_oponk"]
+font_size = 24
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_j74km")
@@ -13,6 +19,32 @@ position = Vector2(89, 318)
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(2.08165e-12, 2.08165e-12)
 anchor_mode = 0
+
+[node name="Control" type="Control" parent="Camera2D"]
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_top = 1.0
+offset_right = 103.0
+offset_bottom = 51.0
+
+[node name="HP" type="Label" parent="Camera2D/Control"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 12.0
+offset_right = 84.0
+offset_bottom = 49.0
+text = "HP: 3"
+label_settings = SubResource("LabelSettings_rrpo8")
+
+[node name="Point" type="Label" parent="Camera2D/Control"]
+layout_mode = 0
+offset_left = 107.0
+offset_top = 11.0
+offset_right = 195.0
+offset_bottom = 48.0
+text = "Point: 0"
+label_settings = SubResource("LabelSettings_oponk")
 
 [node name="Pipes" type="Node2D" parent="."]
 

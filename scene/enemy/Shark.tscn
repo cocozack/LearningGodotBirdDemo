@@ -1,0 +1,58 @@
+[gd_scene load_steps=12 format=3 uid="uid://6qivmlhpt2lm"]
+
+[ext_resource type="Script" path="res://script/enemy/Shark.gd" id="1_cokyu"]
+[ext_resource type="Texture2D" uid="uid://dmq86h2whv1ro" path="res://image/enemy/shark/0.png" id="1_urddb"]
+[ext_resource type="Texture2D" uid="uid://bf5jse5dng20" path="res://image/enemy/shark/1.png" id="2_ppmvu"]
+[ext_resource type="Texture2D" uid="uid://deytycmu6vw8w" path="res://image/enemy/shark/2.png" id="3_gm63x"]
+[ext_resource type="Texture2D" uid="uid://bshj5wb1ykiwk" path="res://image/enemy/shark/3.png" id="4_ywq1m"]
+[ext_resource type="Texture2D" uid="uid://ctukp2h7w7ola" path="res://image/enemy/shark/4.png" id="5_tetpm"]
+[ext_resource type="Texture2D" uid="uid://dif6moj64m73i" path="res://image/enemy/shark/5.png" id="6_htvhq"]
+[ext_resource type="Texture2D" uid="uid://bqks8yy21ke7q" path="res://image/enemy/shark/6.png" id="7_q3g6g"]
+[ext_resource type="Texture2D" uid="uid://bmldfnsy4iakq" path="res://image/enemy/shark/7.png" id="8_p5n53"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0xlkw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_urddb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ppmvu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_gm63x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ywq1m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_tetpm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_htvhq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_q3g6g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_p5n53")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4lru"]
+radius = 122.528
+
+[node name="Shark" type="AnimatableBody2D"]
+script = ExtResource("1_cokyu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_0xlkw")
+frame_progress = 0.65949
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_g4lru")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]

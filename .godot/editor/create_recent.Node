@@ -1,1 +1,12 @@
+Node
+AudioStreamPlayer
+Timer
+VisibleOnScreenNotifier2D
+AudioStreamPlayer2D
+Label
+Control
+CollisionShape2D
+AnimatedSprite2D
+Area2D
+AnimatableBody2D
 ParallaxLayer

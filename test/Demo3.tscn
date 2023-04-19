@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://dkm3iea5174kj"]
+
+[ext_resource type="PackedScene" uid="uid://6qivmlhpt2lm" path="res://scene/enemy/Shark.tscn" id="1_aoyun"]
+[ext_resource type="PackedScene" uid="uid://cw7npt7ha307d" path="res://scene/enemy/Cloud.tscn" id="2_h4v76"]
+[ext_resource type="PackedScene" uid="uid://bsngdxh0c0o2l" path="res://scene/enemy/Fish.tscn" id="3_1nuva"]
+[ext_resource type="PackedScene" uid="uid://c56gjpnpocjdu" path="res://scene/Bird.tscn" id="4_2gme1"]
+
+[node name="Demo3" type="Node2D"]
+position = Vector2(2.08165e-12, 2.08165e-12)
+
+[node name="Shark" parent="." instance=ExtResource("1_aoyun")]
+position = Vector2(514, 264)
+scale = Vector2(0.262675, 0.263918)
+
+[node name="Cloud" parent="." instance=ExtResource("2_h4v76")]
+position = Vector2(379, 79)
+scale = Vector2(0.433883, 0.433883)
+
+[node name="Fish" parent="." instance=ExtResource("3_1nuva")]
+position = Vector2(604, 515)
+scale = Vector2(0.317039, 0.317039)
+
+[node name="Bird" parent="." instance=ExtResource("4_2gme1")]
+position = Vector2(46, 328)

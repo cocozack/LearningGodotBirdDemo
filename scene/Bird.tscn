@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c56gjpnpocjdu"]
+[gd_scene load_steps=12 format=3 uid="uid://c56gjpnpocjdu"]
 
 [ext_resource type="Script" path="res://script/Bird.gd" id="1_j7rth"]
 [ext_resource type="Texture2D" uid="uid://b5kevaaa72kyk" path="res://image/bird0_0.png" id="1_yavc6"]
@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://0dtr05p3v6e5" path="res://audio/die.wav" id="6_fq5uy"]
 [ext_resource type="AudioStream" uid="uid://ccdvailahai6x" path="res://audio/point.wav" id="7_sg1kl"]
 [ext_resource type="AudioStream" uid="uid://c44w1l53toor1" path="res://audio/wing.wav" id="8_t7fcx"]
+[ext_resource type="AudioStream" uid="uid://cse764n6sn7ur" path="res://audio/hp.wav" id="9_fbyqh"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rd23v"]
 animations = [{
@@ -54,3 +55,6 @@ stream = ExtResource("7_sg1kl")
 
 [node name="wing" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_t7fcx")
+
+[node name="hp" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_fbyqh")
