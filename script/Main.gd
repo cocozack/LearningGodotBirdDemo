@@ -1,4 +1,4 @@
-extends Node2D
+extends Node
 
 @onready var transitionAnimation: AnimationPlayer = $Transition/AnimationPlayer
 
@@ -11,6 +11,9 @@ var sceneMap = {
 
 var score: int = 0
 var highestScore: int = 0
+
+func _init():
+	pass
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

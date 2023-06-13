@@ -1,1 +1,12 @@
 res://scene/Main.tscn
+res://script/Main.gd
+res://script/utils.gd
+res://scene/Home.tscn
+res://scene/Game.tscn
+res://scene/Over.tscn
+res://test/Demo3.tscn
+res://scene/Bird.tscn
+res://scene/Background.tscn
+res://scene/Pipe.tscn
+res://scene/effect/EffectHp.tscn
+res://test/Demo1.tscn

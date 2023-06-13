@@ -4,6 +4,7 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Control/Start.connect("pressed", Callable(self, "startGame"))
+	pass
 
 func startGame():
 	Main.changeScene(Main.SCENE.Game)
